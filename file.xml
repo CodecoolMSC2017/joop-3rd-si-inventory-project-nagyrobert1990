@@ -2,6 +2,4 @@
 <Products>
     <Product name="Metallica" price="14" size="12" type="cd"/>
     <Product name="Silence of the Lambs" price="11" size="100" type="book"/>
-    <Product name="Harry Potter and the Philosopher's Stone" price="16" size="250" type="book"/>
-    <Product name="Hans Zimmer" price="17" size="20" type="cd"/>
 </Products>

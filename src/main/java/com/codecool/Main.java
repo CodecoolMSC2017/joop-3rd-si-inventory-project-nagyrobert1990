@@ -11,7 +11,6 @@ public class Main {
         storeManager.addBookProduct("Silence of the Lambs", 11, 100);
         storeManager.addBookProduct("Harry Potter and the Philosopher's Stone", 16, 250);
         storeManager.addCDProduct("Hans Zimmer", 17, 20);
-        //storeManager.addCDProduct("Iron Maiden", 11, 16);
         String listOfEverything = storeManager.listProducts();
         int totalPrice = storeManager.getTotalProductPrice();
 

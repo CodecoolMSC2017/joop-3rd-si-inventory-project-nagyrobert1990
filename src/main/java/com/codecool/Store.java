@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Store implements StorageCapable {
-    private List<Product> listOfProducts = new ArrayList<>();
+    private List<Product> listOfProducts = new ArrayList<Product>();
 
     public List<Product> getListOfProducts() {
         return listOfProducts;

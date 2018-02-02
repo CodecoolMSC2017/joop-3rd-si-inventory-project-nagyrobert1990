@@ -18,15 +18,17 @@ public class StoreManager {
 
     public String listProducts(){
         String lst = "";
+
         for (Product iterateProducts : storage.getAllProduct()){
             String tp = "cd";
             String a = iterateProducts.getName();
             String b = Integer.toString(iterateProducts.getPrice());
             String c = Integer.toString(iterateProducts.getSize());
+
             if (iterateProducts instanceof BookProduct){
                 tp = "book";
             }
-            lst += "name: " + a + "price: " + b + "size: " + c + "type: " + tp + "\n";
+            lst += "name: " + a + " price: " + b + " size: " + c + " type: " + tp + "\n";
         }
         return lst;
     }

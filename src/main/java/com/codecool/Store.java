@@ -15,18 +15,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Store implements StorageCapable {
-    List<Product> listOfProducts = new ArrayList<>();
+    private List<Product> listOfProducts = new ArrayList<>();
+
+    public List<Product> getListOfProducts() {
+        return listOfProducts;
+    }
 
     public void store(Product product){
-        listOfProducts = loadProducts();
         storeProduct(product);
         saveToXml(listOfProducts);
     }
 
     @Override
-    public List<Product> getAllProduct(){
-        return loadProducts();
-    }
+    public abstract List<Product> getAllProduct();
 
     @Override
     public void storeCDProduct(String name, int price, int tracks){
@@ -115,8 +116,7 @@ public abstract class Store implements StorageCapable {
 
                     if (eElement.getAttribute("type").equals("book")) {
                         pro = new BookProduct(name, price, size);
-                    }
-                    else {
+                    } else {
                         pro = new CDProduct(name, price, size);
                     }
                     loadedList.add(pro);
@@ -125,10 +125,10 @@ public abstract class Store implements StorageCapable {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        for (int i = 0; i < listOfProducts.size() ; i++) {
-            loadedList.add(listOfProducts.get(i));
-        }
+
+        for (int i = 0; i < listOfProducts.size(); i++) loadedList.add(listOfProducts.get(i));
         //loadedList.addAll(listOfProducts); alternative for the for loop
+
         return loadedList;
     }
 }

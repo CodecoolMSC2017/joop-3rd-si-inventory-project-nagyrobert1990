@@ -4,13 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Product asd = new CDProduct("Iron Maiden", 12, 10);
         StoreManager storeManager = new StoreManager();
         PersistentStore ps = new PersistentStore();
         storeManager.addStorage(ps);
-        ps.storeProduct(asd);
-        storeManager.addCDProduct("Metallica", 15, 12);
+        storeManager.addCDProduct("Metallica", 14, 12);
         storeManager.addBookProduct("Silence of the Lambs", 11, 100);
+        storeManager.addBookProduct("Harry Potter and the Philosopher's Stone", 16, 250);
+        storeManager.addCDProduct("Hans Zimmer", 17, 20);
+        //storeManager.addCDProduct("Iron Maiden", 11, 16);
         String listOfEverything = storeManager.listProducts();
         int totalPrice = storeManager.getTotalProductPrice();
 

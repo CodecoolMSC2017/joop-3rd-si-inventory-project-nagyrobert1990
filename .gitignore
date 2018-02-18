@@ -2,3 +2,5 @@
 target
 *.iml
 *.swp
+.classpath
+.project
